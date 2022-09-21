@@ -1,4 +1,4 @@
-package Controller;
+package com.example.cfp_day2.Controller;
 
 import org.springframework.web.bind.annotation.*;
 
