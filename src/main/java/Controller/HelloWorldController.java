@@ -1,16 +1,13 @@
 package Controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/Hello")
 public class HelloWorldController {
 
     @GetMapping("/get")
-    public String hello()
-    {
+    public String hello() {
         return "Hello World";
     }
 
@@ -18,5 +15,18 @@ public class HelloWorldController {
     public String hello1() {
         return "Hello bridgelabzs";
 
+    }
+
+    //UC1
+    @GetMapping("/web")
+    public String sayhello()
+    {
+        return "hello";
+    }
+
+    //UC2
+    @RequestMapping(value = {"/query"}, method = RequestMethod.GET)
+    public String sayHello(@RequestParam(value = "name") String name) {
+        return " Hello " + name + "!";
     }
 }
